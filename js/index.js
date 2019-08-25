@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     $(document).ready(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else { x.innerHTML = "Geolocation is not supported by this browser."; }
 
         $("#go").hide();
         $("#labelLoading").hide();
