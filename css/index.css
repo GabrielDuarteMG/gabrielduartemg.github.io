@@ -1,0 +1,45 @@
+#mapBorder {
+    border: 100px;
+    width: 100px;
+    height: 200px;
+    border-color: black;
+}
+
+input,
+button {
+    outline: none;
+}
+
+input[type="text"]:focus {
+    color: #333;
+}
+
+input[type="text"] {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    height: 40px;
+    width: 240px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    font-family: Lato, sans-serif;
+    color: #888;
+}
+
+#go {
+    background: none;
+    border: 0px;
+    color: #888;
+    font-size: 15px;
+    user-select: none;
+    width: 60px;
+    margin: 10px 0 0;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+
+#go:hover {
+    color: #333;
+}

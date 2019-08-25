@@ -1,0 +1,86 @@
+<html id="doc" lang="pt">
+
+<head>
+    <script src="js/lib/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Express Location</title>
+
+    <script src="js/lib/checkCountryLib.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/uniqueKey.js"></script>
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/popper.min.js"></script>
+    <script src="js/lib/DontpadJS.js"></script>
+    <script src="js/lib/hash.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron text-center" style="user-select: none">
+        <h1>Express Location</h1>
+        <p>Envie a sua localização precisa com apenas 6 digitos</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Enviar</h3>
+                <p>Envie sua localização facilmente, apenas libere a permissão e envie o codigo que irá aparecer.</p>
+                <button type="button" data-toggle="modal" data-target="#myModal" id="gerarEnviar" class="btn btn-primary">Gerar localização</button>
+            </div>
+            <div class="col-sm-4">
+                <h3>Receber</h3>
+                <p>Cole o codigo de 6 digitos e visualize a localização em tempo real.</p>
+                <input id="usr" placeholder="Codigo unico" type="text"><button id="go">Bora!</button>
+                <br>
+                <p id="labelLoading">Validando Codigo...</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Compartilhe 😎</h3>
+                <p>Ajude a quem precisa de uma maneira rapida e facil de Compartilhar sua localização.</p>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+                    Compartilhar no Facebook
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+
+        <ul class="nav navbar-nav float-right">
+            <a class="navbar-nav pull-right" target="_blank" rel="noopener noreferrer" href="https://github.com/GabrielDuarteMG">Criado Por Gabriel Duarte</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- <div id="map"></div> -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title" style="user-select: none">Codigo gerado</h4>
+                    <button type="button" style="user-select: none" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <a id="codeLbl"></a>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" id="copiarBtn">Copiar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
