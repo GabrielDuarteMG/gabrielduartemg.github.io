@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(() => {
-
         $("#go").hide();
         $("#labelLoading").hide();
         $("#gerarEnviar").click(() => {
@@ -81,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const generatePost = () => {
         var location = navigator.geolocation.watchPosition((position) => {
 
-            let promise = new Promise(function(resolve, reject) {
+            let promise = new Promise(function (resolve, reject) {
                 let latitude = position.coords.latitude;
                 let longitude = position.coords.longitude
                 $("#codeLbl").html('Carregando...')
                 const apiUrl = 'https://cors-anywhere.herokuapp.com/http://api.geonames.org/countryCodeJSON?lat=' + latitude + '&lng=' + longitude + '&username=gabriel';
                 fetch(apiUrl)
-                    .then(function(response) {
-                        response.json().then(function(data) {
+                    .then(function (response) {
+                        response.json().then(function (data) {
                             var uniq = '';
                             uniq = uniq + data.countryCode;
                             if (latitude > -100 && latitude < -50)
@@ -116,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             else if (longitude > 70)
                                 uniq = uniq + 'A'
                             uniq = uniq + restokeyGen()
-                            uniq = uniq.split('').map(function(v) {
+                            uniq = uniq.split('').map(function (v) {
                                 var chance = Math.round(Math.random());
                                 return v = chance ? v.toUpperCase() : v.toLowerCase();
                             }).join('');
@@ -126,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             finishLocation(location);
                         });
                     })
-                    .catch(function(err) {
+                    .catch(function (err) {
                         console.error('Error to generate.', err);
                     });
             });
