@@ -44,20 +44,21 @@ $(document).ready(event => {
       ) {
         validEmail($("#emailInput").val()).then(res => {
           if (res == true) {
+            let bodyRequest = await JSON.stringify({
+              subject: "Contato - Portifolio",
+              emailContact: $("#emailInput").val(),
+              text: `${$("#nameInput").val()}\n\n${$("#form7").val()}`
+            });
             fetch("https://fastmailservice.herokuapp.com/", {
               method: "POST",
+              mode: "no-cors",
               headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify({
-                subject: "Contato - Portifolio",
-                emailContact: $("#emailInput").val(),
-                text: `${$("#nameInput").val()}\n\n${$("#form7").val()}`
-              })
+              body: bodyRequest
             })
               .then(response => {
-                return response.json();
+                return response;
               })
               .then(data => {
                 console.log(data);
