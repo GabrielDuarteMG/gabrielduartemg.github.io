@@ -44,7 +44,7 @@ $(document).ready(event => {
       ) {
         validEmail($("#emailInput").val()).then(res => {
           if (res == true) {
-            fetch("http://fastmailservice.herokuapp.com/", {
+            fetch("https://fastmailservice.herokuapp.com/", {
               method: "POST",
               headers: {
                 Accept: "application/json",
