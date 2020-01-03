@@ -44,7 +44,7 @@ $(document).ready(event => {
       ) {
         validEmail($("#emailInput").val()).then(res => {
           if (res == true) {
-            let bodyRequest = await JSON.stringify({
+            let bodyRequest = JSON.stringify({
               subject: "Contato - Portifolio",
               emailContact: $("#emailInput").val(),
               text: `${$("#nameInput").val()}\n\n${$("#form7").val()}`
