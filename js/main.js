@@ -51,7 +51,7 @@ $(document).ready(event => {
             });
             fetch("https://fastmailservice.herokuapp.com/", {
               method: "POST",
-   
+              mode: "no-cors",
               headers: {
                  'Content-Type': 'application/json'
               },
