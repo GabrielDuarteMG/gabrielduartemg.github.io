@@ -51,9 +51,9 @@ $(document).ready(event => {
             });
             fetch("https://fastmailservice.herokuapp.com/", {
               method: "POST",
-              mode: "no-cors",
+              mode: "cors",
               headers: {
-                 'Content-Type': 'application/json'
+                "Content-Type": "application/json"
               },
               body: bodyRequest
             })
@@ -62,7 +62,8 @@ $(document).ready(event => {
               })
               .then(data => {
                 console.log(data);
-              });
+              })
+              .then(error => console.log(error));
           } else {
             Notify("Please insert valid email", null, null, "warning");
           }
