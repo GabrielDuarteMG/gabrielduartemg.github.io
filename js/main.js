@@ -13,7 +13,10 @@ $(document).ready(event => {
     testInput = event =>
         new RegExp(/[a-zåäö ]/i).test(String.fromCharCode(event.which));
     $("#nameInput").bind("keypress", testInput);
-
+    $('#helpButton').click(() => {
+        var win = window.open('https://github.com/GabrielDuarteMG/FastMailServiceAPI', '_blank');
+        win.focus();
+    })
     $("#sendBtn").click(() => {
         //Validation key Email f3eb15399a404281aa1b788b5cdc831c
         if (
@@ -71,6 +74,8 @@ $(document).ready(event => {
                                 } else {
                                     Notify(response.statusText, null, null, "danger");
                                 }
+                                console.log(response);
+
                             })
 
                     } else {
