@@ -283,7 +283,13 @@
 
         <!-- Custom scripts for this template -->
         <script src="js/resume.min.js"></script>
-
+        <script>
+            var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+            if (mobile) {
+                $('#lastCommitDiv').css('display', 'none');
+                $('#helpButton').css('display', 'none'); // OR you can use $('.navWrap').hide();
+            }
+        </script>
 </body>
 
 </html>
