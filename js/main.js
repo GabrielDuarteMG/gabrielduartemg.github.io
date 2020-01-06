@@ -54,7 +54,6 @@ $(document).ready(event => {
                                 headers: {
                                     "Content-Type": "text/plain",
                                     'Access-Control-Allow-Headers': '*',
-                                    'Access-Control-Allow-Origin': '*',
                                     'Access-Control-Request-Method': 'POST',
                                     'Access-Control-Allow-Headers': 'Content-Type'
                                 },
