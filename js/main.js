@@ -61,9 +61,9 @@ $(document).ready(event => {
                             })
                             .then(response => {
                                 if (response.status == 200) {
-                                    $("#emailInput").val() = ""
-                                    $("#form7").val() = ""
-                                    $("#nameInput").val() = ""
+                                    $("#emailInput").val("")
+                                    $("#form7").val("")
+                                    $("#nameInput").val("")
                                     grecaptcha.reset()
                                     Notify("Form submitted successfully", null, null, "sucess");
                                 } else if (response.status == 400) {
