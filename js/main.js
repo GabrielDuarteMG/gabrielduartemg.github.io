@@ -80,7 +80,7 @@ $(document).ready(event => {
 
             }
         }
-        grecaptcha.reset()
+
     });
     const URL_TO_FETCH = 'https://api.github.com/repos/gabrielduartemg/gabrielduartemg.github.io/commits';
     fetch(URL_TO_FETCH, {
