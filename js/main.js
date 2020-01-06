@@ -65,7 +65,7 @@ $(document).ready(event => {
                                     $("#form7").val("")
                                     $("#nameInput").val("")
                                     grecaptcha.reset()
-                                    Notify("Form submitted successfully", null, null, "sucess");
+                                    Notify("Form submitted successfully", null, null, "success");
                                 } else if (response.status == 400) {
                                     Notify(response.statusText, null, null, "warning");
                                 } else {
