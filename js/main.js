@@ -61,23 +61,38 @@ $(document).ready(event => {
                                 body: bodyRequest
                             })
                             .then(response => {
-                                console.log(response);
+                                if (response.status == 200) {
+                                    $("#emailInput").val() = ""
+                                    $("#form7").val() = ""
+                                    $("#nameInput").val() = ""
+                                    grecaptcha.reset()
+                                    Notify("Form submitted successfully", null, null, "sucess");
+                                } else if (response.status == 400) {
+                                    Notify(response.statusText, null, null, "warning");
+                                } else {
+                                    Notify(response.statusText, null, null, "danger");
+                                }
                             })
-                            .then(data => {
-                                console.log(data);
-                            })
+
                     } else {
                         Notify("Please insert valid email", null, null, "warning");
                     }
                 });
+
             }
         }
+        grecaptcha.reset()
     });
-});
+    const URL_TO_FETCH = 'https://api.github.com/repos/gabrielduartemg/gabrielduartemg.github.io/commits';
+    fetch(URL_TO_FETCH, {
+            method: 'get' // opcional 
+        })
+        .then(function(response) {
+            return response.json();
+        }).then(data => {
+            $('#lastCommit').text(data[0].commit.message)
+            $('#lastCommit').attr("href", data[0].html_url)
 
-
-let bodyRequest = JSON.stringify({
-    subject: "Contato - Portifolio",
-    emailContact: $("#emailInput").val(),
-    text: `${$("#nameInput").val()}\n\n${$("#form7").val()}`
+        })
+        .catch(function(err) { console.error(err); });
 });
